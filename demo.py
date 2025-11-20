@@ -48,10 +48,10 @@ if __name__ == '__main__':
 
     # ####gpu
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu') 
-    input_path = r"F:\code\Lab_github\src_apartqsm_GPU\data"
+    input_path = r"F:\code\src_apartqsm_GPU\data"
     dcm_path = os.path.join(input_path, 'GRE')
     t2_path = os.path.join(input_path, 'T2.nii.gz')
-    output_path = r"F:\code\Lab_github\src_apartqsm_GPU\Results"
+    output_path = r"F:\code\src_apartqsm_GPU\Results"
     t2 = nib.load(t2_path).get_fdata()
     #raw_data, voxel_size, matrix_size, CF, delta_TE, TE, affine_3D, B0_dir, B0, origin = Load(dcm_path)
     raw_data, voxel_size, matrix_size, CF, delta_TE, TE, affine_3D, B0_dir, B0, origin = Load_QSM(dcm_path)
@@ -117,3 +117,4 @@ if __name__ == '__main__':
     print("QSM running time: {:.2f} s".format(end0 - start0))
     print("apartQSM running time: {:.2f} s".format(end - start))
     print("total running time: {:.2f} s".format(end - start0))
+
